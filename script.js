@@ -48,7 +48,7 @@ document.querySelector('.btn--hold').addEventListener('click', function () {
   }
   document.querySelector(`#score--${(swapNum + 1) % 2}`).textContent =
     player1Score;
-  if (player1Score > 3) {
+  if (player1Score > 99) {
     document.querySelector(
       `.player--${(swapNum + 1) % 2}`
     ).style.backgroundColor = '#07c707';
