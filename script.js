@@ -48,7 +48,7 @@ document.querySelector('.btn--hold').addEventListener('click', function () {
   }
   document.querySelector(`#score--${(swapNum + 1) % 2}`).textContent =
     player1Score;
-  if (player1Score > 99) {
+  if (player1Score > 4) {
     document.querySelector(
       `.player--${(swapNum + 1) % 2}`
     ).style.backgroundColor = '#07c707';
@@ -63,7 +63,9 @@ document.querySelector('.btn--hold').addEventListener('click', function () {
 });
 document.querySelector('.btn--new').addEventListener('click', function () {
   let btnList = document.querySelectorAll('.btn');
-
+  document.querySelector('.dice').src = `dice-5.png`;
+  swapNum = 3;
+  swap();
   for (let i = 0; i < btnList.length; i++) {
     btnList[i].disabled = false;
   }
@@ -75,7 +77,4 @@ document.querySelector('.btn--new').addEventListener('click', function () {
   for (let i = 0; i < currentList.length; i++) {
     currentList[i].textContent = '0';
   }
-  document.querySelector('.dice').src = `dice-5.png`;
-  swapNum = 3;
-  swap();
 });
